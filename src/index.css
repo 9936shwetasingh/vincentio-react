@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 font-sans;
+}
+
+a { @apply no-underline; }
+h1,h2,h3,h4,h5,h6 { @apply font-bold; }
+
+
+a { @apply no-underline; }
+h1,h2,h3,h4,h5,h6 { @apply font-bold; }
+
+.btn-primary {
+  @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition;
+}
+
+.btn-secondary {
+  @apply bg-white hover:bg-gray-100 text-gray-900 font-semibold py-3 px-6 rounded-lg transition;
+}
+.navbar {
+  background: white;
+  padding: 10px 40px;
+}
+
+.menu {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  min-width: 220px;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background: #f2f2f2;
+}
+
+.sub-menu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  background: white;
+  min-width: 200px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.sub-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.sub-menu a:hover {
+  background: #e6f0ff;
+}
