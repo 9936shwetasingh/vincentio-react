@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Montserrat:wght@500;600&family=Poppins:wght@600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ---------- Animations ---------- */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -16,17 +20,26 @@
   animation: fadeIn 0.2s ease-in-out;
 }
 
+/* ---------- Global Styles ---------- */
 body {
   @apply bg-gray-50 text-gray-900 font-sans;
 }
 
-a { @apply no-underline; }
-h1,h2,h3,h4,h5,h6 { @apply font-bold; }
+/* Headings → Poppins */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-heading font-bold;
+}
 
+a {
+  @apply no-underline;
+}
 
-a { @apply no-underline; }
-h1,h2,h3,h4,h5,h6 { @apply font-bold; }
-
+/* ---------- Buttons ---------- */
 .btn-primary {
   @apply bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition;
 }
@@ -34,6 +47,13 @@ h1,h2,h3,h4,h5,h6 { @apply font-bold; }
 .btn-secondary {
   @apply bg-white hover:bg-gray-100 text-gray-900 font-semibold py-3 px-6 rounded-lg transition;
 }
+
+/* ---------- Product Titles ---------- */
+.product-title {
+  @apply font-product font-semibold;
+}
+
+/* ---------- Navbar ---------- */
 .navbar {
   background: white;
   padding: 10px 40px;
@@ -55,7 +75,7 @@ h1,h2,h3,h4,h5,h6 { @apply font-bold; }
   top: 100%;
   left: 0;
   background: #fff;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   min-width: 220px;
 }
 
@@ -68,13 +88,14 @@ h1,h2,h3,h4,h5,h6 { @apply font-bold; }
   background: #f2f2f2;
 }
 
+/* ---------- Sub Menu ---------- */
 .sub-menu {
   position: absolute;
   top: 0;
   left: 100%;
   background: white;
   min-width: 200px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .sub-menu a {

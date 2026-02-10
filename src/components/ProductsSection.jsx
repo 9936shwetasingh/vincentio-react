@@ -1,9 +1,10 @@
 const ProductSection = () => {
   return (
-    <section className="py-28 bg-white">
+    <section className="py-28 bg-white font-sans">
       <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-20">
+        {/* Section Heading */}
+        <h2 className="text-3xl font-heading font-semibold text-center text-gray-800 mb-20">
           Products
         </h2>
 
@@ -19,7 +20,7 @@ const ProductSection = () => {
                          group-hover:scale-110 group-hover:-translate-y-1"
             />
             <h3
-              className="text-lg font-medium text-black mb-2
+              className="text-lg font-product font-semibold text-black mb-2
                          inline-block relative
                          after:content-[''] after:block after:h-[2px]
                          after:w-0 after:bg-blue-600 after:transition-all after:duration-300
@@ -27,7 +28,7 @@ const ProductSection = () => {
             >
               VnetMox
             </h3>
-            <p className="text-sm text-blue-600">
+            <p className="text-sm text-blue-600 font-sans">
               Powerful Virtualization Platform
             </p>
           </a>
@@ -45,7 +46,7 @@ const ProductSection = () => {
                          group-hover:scale-110 group-hover:-translate-y-1"
             />
             <h3
-              className="text-lg font-medium text-black mb-2
+              className="text-lg font-product font-semibold text-black mb-2
                          inline-block relative
                          after:content-[''] after:block after:h-[2px]
                          after:w-0 after:bg-blue-600 after:transition-all after:duration-300
@@ -53,7 +54,7 @@ const ProductSection = () => {
             >
               VnetBackup
             </h3>
-            <p className="text-sm text-blue-600">
+            <p className="text-sm text-blue-600 font-sans">
               Backup Archiving Restore Manager
             </p>
           </a>
@@ -71,7 +72,7 @@ const ProductSection = () => {
                          group-hover:scale-110 group-hover:-translate-y-1"
             />
             <h3
-              className="text-lg font-medium text-black mb-2
+              className="text-lg font-product font-semibold text-black mb-2
                          inline-block relative
                          after:content-[''] after:block after:h-[2px]
                          after:w-0 after:bg-blue-600 after:transition-all after:duration-300
@@ -79,7 +80,7 @@ const ProductSection = () => {
             >
               VnetNAS
             </h3>
-            <p className="text-sm text-blue-600">
+            <p className="text-sm text-blue-600 font-sans">
               Enterprise Grade Unified NAS Storage
             </p>
           </a>
@@ -97,7 +98,7 @@ const ProductSection = () => {
                          group-hover:scale-110 group-hover:-translate-y-1"
             />
             <h3
-              className="text-lg font-medium text-black mb-2
+              className="text-lg font-product font-semibold text-black mb-2
                          inline-block relative
                          after:content-[''] after:block after:h-[2px]
                          after:w-0 after:bg-blue-600 after:transition-all after:duration-300
@@ -105,7 +106,7 @@ const ProductSection = () => {
             >
               VnetStor
             </h3>
-            <p className="text-sm text-blue-600">
+            <p className="text-sm text-blue-600 font-sans">
               Distributed & Highly Scalable Storage Solution
             </p>
           </a>
@@ -121,7 +122,7 @@ const ProductSection = () => {
                          group-hover:scale-110 group-hover:-translate-y-1"
             />
             <h3
-              className="text-lg font-medium text-black mb-2
+              className="text-lg font-product font-semibold text-black mb-2
                          inline-block relative
                          after:content-[''] after:block after:h-[2px]
                          after:w-0 after:bg-blue-600 after:transition-all after:duration-300
@@ -129,7 +130,7 @@ const ProductSection = () => {
             >
               VnetWall
             </h3>
-            <p className="text-sm text-blue-600">
+            <p className="text-sm text-blue-600 font-sans">
               Robust & True Security Platform
             </p>
           </a>
