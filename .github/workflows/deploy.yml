@@ -8,7 +8,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: self-hosted  # Use your self-hosted runner
+    runs-on: self-hosted   # Use your self-hosted runner
 
     steps:
       # Step 1: Checkout the repo
@@ -22,6 +22,7 @@ jobs:
           host: ${{ secrets.VM_HOST }}       # Your VM IP or hostname
           username: ubuntu                   # VM username
           key: ${{ secrets.VM_SSH_KEY }}    # Your private SSH key stored in GitHub Secrets
+          port: 22
           script: |
             cd /home/ubuntu/vincentio-react
             ./deploy.sh
