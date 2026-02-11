@@ -1,5 +1,6 @@
 name: Deploy to VM
 
+# Trigger workflow on push to main branch
 on:
   push:
     branches:
@@ -7,15 +8,20 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted  # Use your self-hosted runner
 
     steps:
+      # Step 1: Checkout the repo
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Deploy via SSH
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.VM_HOST }}
-          username: ubuntu
-          key: ${{ secrets.VM_SSH_KEY }}
+          host: ${{ secrets.VM_HOST }}       # Your VM IP or hostname
+          username: ubuntu                   # VM username
+          key: ${{ secrets.VM_SSH_KEY }}    # Your private SSH key stored in GitHub Secrets
           script: |
             cd /home/ubuntu/vincentio-react
             ./deploy.sh
