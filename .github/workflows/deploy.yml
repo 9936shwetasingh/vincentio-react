@@ -19,10 +19,25 @@ jobs:
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
-          host: ${{ secrets.VM_HOST }}       # Your VM IP or hostname
+          host: ${{ secrets.VM_HOST }}       # VM IP
           username: ubuntu                   # VM username
-          key: ${{ secrets.VM_SSH_KEY }}    # Your private SSH key stored in GitHub Secrets
+          key: ${{ secrets.VM_SSH_KEY }}    # Private SSH key stored in GitHub Secrets
           port: 22
           script: |
+            # Navigate to project folder on VM
             cd /home/ubuntu/vincentio-react
-            ./deploy.sh
+            
+            # Pull latest code
+            git pull origin main
+            
+            # Build Docker image (if using Docker)
+            docker build -t vincentio-react .
+            
+            # Stop existing container if running
+            if [ $(docker ps -q -f name=vincentio-react-app) ]; then
+              docker stop vincentio-react-app
+              docker rm vincentio-react-app
+            fi
+            
+            # Run Docker container
+            docker run -d -p 80:80 --name vincentio-react-app vincentio-react
