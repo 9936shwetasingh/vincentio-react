@@ -13,33 +13,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.VM_HOST }}
-          username: ubuntu
-          key: ${{ secrets.VM_SSH_KEY }}
-          port: 22
-          script: |
-            set -e
+      - name: Deploy directly on VM
+        run: |
+          set -e
 
-            echo "Navigating to project folder..."
-            cd /home/ubuntu/vincentio-react || exit 1
+          echo "Navigating to project folder..."
+          cd /home/ubuntu/vincentio-react
 
-            echo "Pulling latest code..."
-            git fetch --all
-            git reset --hard origin/main
+          echo "Pulling latest code..."
+          git fetch --all
+          git reset --hard origin/main
 
-            echo "Building Docker image..."
-            docker build -t vincentio-react .
+          echo "Building Docker image..."
+          docker build -t vincentio-react .
 
-            echo "Stopping old container if exists..."
-            if [ "$(docker ps -q -f name=vincentio-react-app)" ]; then
-              docker stop vincentio-react-app
-              docker rm vincentio-react-app
-            fi
+          echo "Stopping old container if exists..."
+          if [ "$(docker ps -q -f name=vincentio-react-app)" ]; then
+            docker stop vincentio-react-app
+            docker rm vincentio-react-app
+          fi
 
-            echo "Starting container..."
-            docker run -d -p 80:80 --name vincentio-react-app vincentio-react
+          echo "Starting container..."
+          docker run -d -p 80:80 --name vincentio-react-app vincentio-react
 
-            echo "Deployment successful!"
+          echo "Deployment successful!"
