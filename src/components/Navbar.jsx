@@ -64,7 +64,7 @@ export default function Navbar() {
       <div className="absolute top-0 left-full w-44 bg-white shadow-lg rounded-md py-2 
                       opacity-0 invisible group-hover:opacity-100 group-hover:visible">
         <Link to="/products/vnetwall" className="block px-4 py-2 hover:bg-gray-100">
-          VnetWall
+          Flexbox
         </Link>
       </div>
     </div>
@@ -72,13 +72,13 @@ export default function Navbar() {
     {/* Virtualization */}
     <div className="relative group">
       <div className="px-4 py-2 hover:bg-gray-100 cursor-pointer flex justify-between">
-        Virtualization <span>›</span>
+        Server Hardware <span>›</span>
       </div>
 
       <div className="absolute top-0 left-full w-44 bg-white shadow-lg rounded-md py-2 
                       opacity-0 invisible group-hover:opacity-100 group-hover:visible">
         <Link to="/products/vnetmox" className="block px-4 py-2 hover:bg-gray-100">
-          VnetMox
+          Rack Servers
         </Link>
       </div>
     </div>
