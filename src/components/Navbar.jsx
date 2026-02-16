@@ -18,74 +18,119 @@ export default function Navbar() {
           <Link to="/" className="hover:text-blue-600">Home</Link>
 
           {/* Services Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setServiceOpen(true)}
-            onMouseLeave={() => setServiceOpen(false)}
-          >
-            <span className="cursor-pointer hover:text-blue-600">
-              Services ▾
-            </span>
+<div
+  className="relative"
+  onMouseEnter={() => setServiceOpen(true)}
+  onMouseLeave={() => setServiceOpen(false)}
+>
+  <span className="cursor-pointer hover:text-blue-600 flex items-center gap-1">
+    Services
+    <span
+      className={`transition-transform duration-300 ${
+        serviceOpen ? "rotate-180" : "rotate-0"
+      }`}
+    >
+      ▾
+    </span>
+  </span>
 
-            <div
-              className={`absolute top-7 left-0 w-52 bg-white shadow-lg rounded-md py-2 transition-all duration-200 ${
-                serviceOpen ? "opacity-100 visible" : "opacity-0 invisible"
-              }`}
-            >
-              <Link to="/services/public-cloud" className="block px-4 py-2 hover:bg-gray-100">
-                Public Cloud
-              </Link>
-              <Link to="/services/private-cloud" className="block px-4 py-2 hover:bg-gray-100">
-                Private Cloud
-              </Link>
-            </div>
-          </div>
+  <div
+    className={`absolute top-8 left-0 w-56 bg-white shadow-xl rounded-lg py-2 transition-all duration-300 transform ${
+      serviceOpen
+        ? "opacity-100 visible translate-y-0"
+        : "opacity-0 invisible -translate-y-2"
+    }`}
+  >
+    <Link
+      to="/services/public-cloud"
+      className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600 transition"
+    >
+      Public Cloud
+    </Link>
+
+    <Link
+      to="/services/private-cloud"
+      className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600 transition"
+    >
+      Private Cloud
+    </Link>
+
+    <Link
+      to="/services/colocation"
+      className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600 transition"
+    >
+      Services Colocation
+    </Link>
+  </div>
+</div>
+
+
+              {/* Products Dropdown */}
               {/* Products Dropdown */}
 <div
   className="relative"
   onMouseEnter={() => setProductOpen(true)}
   onMouseLeave={() => setProductOpen(false)}
 >
-  <span className="cursor-pointer hover:text-blue-600">
-    Products ▾
+  {/* Dropdown Button */}
+  <span className="cursor-pointer hover:text-blue-600 flex items-center gap-1 font-medium">
+    Products
+    <span
+      className={`transition-transform duration-300 ${
+        productOpen ? "rotate-180" : "rotate-0"
+      }`}
+    >
+      ▾
+    </span>
   </span>
 
+  {/* Dropdown Menu */}
   <div
-    className={`absolute top-7 left-0 w-56 bg-white shadow-lg rounded-md py-2 transition-all duration-200 ${
-      productOpen ? "opacity-100 visible" : "opacity-0 invisible"
-    }`}
+    className={`absolute top-8 left-0 w-56 bg-white shadow-2xl rounded-lg py-2 transition-all duration-300 transform z-50
+      ${productOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"}
+    `}
   >
     {/* Network & Security */}
     <div className="relative group">
-      <div className="px-4 py-2 hover:bg-gray-100 cursor-pointer flex justify-between">
-        Network & Security <span>›</span>
+      <div className="px-4 py-2 hover:bg-blue-50 hover:text-blue-600 cursor-pointer flex justify-between items-center transition">
+        Network & Security <span className="text-gray-400">›</span>
       </div>
 
-      <div className="absolute top-0 left-full w-44 bg-white shadow-lg rounded-md py-2 
-                      opacity-0 invisible group-hover:opacity-100 group-hover:visible">
-        <Link to="/products/vnetwall" className="block px-4 py-2 hover:bg-gray-100">
+      <div
+        className="absolute top-0 left-full w-44 bg-white shadow-xl rounded-lg py-2
+          opacity-0 invisible group-hover:opacity-100 group-hover:visible
+          transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0"
+      >
+        <Link
+          to="/products/vnetwall"
+          className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600 transition"
+        >
           Flexbox
         </Link>
       </div>
     </div>
 
-    {/* Virtualization */}
+    {/* Server Hardware */}
     <div className="relative group">
-      <div className="px-4 py-2 hover:bg-gray-100 cursor-pointer flex justify-between">
-        Server Hardware <span>›</span>
+      <div className="px-4 py-2 hover:bg-blue-50 hover:text-blue-600 cursor-pointer flex justify-between items-center transition">
+        Server Hardware <span className="text-gray-400">›</span>
       </div>
 
-      <div className="absolute top-0 left-full w-44 bg-white shadow-lg rounded-md py-2 
-                      opacity-0 invisible group-hover:opacity-100 group-hover:visible">
-        <Link to="/products/vnetmox" className="block px-4 py-2 hover:bg-gray-100">
+      <div
+        className="absolute top-0 left-full w-44 bg-white shadow-xl rounded-lg py-2
+          opacity-0 invisible group-hover:opacity-100 group-hover:visible
+          transition-all duration-300 transform -translate-y-1 group-hover:translate-y-0"
+      >
+        <Link
+          to="/products/vnetmox"
+          className="block px-4 py-2 hover:bg-blue-50 hover:text-blue-600 transition"
+        >
           Rack Servers
         </Link>
       </div>
     </div>
   </div>
 </div>
-
-          
 
           <Link to="/partners" className="hover:text-blue-600">Partners</Link>
           <Link to="/about" className="hover:text-blue-600">About Us</Link>
