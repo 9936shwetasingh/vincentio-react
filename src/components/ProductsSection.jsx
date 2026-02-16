@@ -12,7 +12,7 @@ const ProductSection = () => {
         <div className="grid md:grid-cols-4 gap-20 text-center">
 
           {/* VnetMox */}
-          <a href="/products/vnetmox" className="group inline-block">
+          <a href="/http://localhost:5173/products/vnetwall" className="group inline-block">
             <img
               src="/images/Vnetmox.png"
               alt="VnetMox"
@@ -26,7 +26,7 @@ const ProductSection = () => {
                          after:w-0 after:bg-blue-600 after:transition-all after:duration-300
                          group-hover:after:w-full"
             >
-              VnetMox
+              Flexbox
             </h3>
             <p className="text-sm text-blue-600 font-sans">
               Powerful Virtualization Platform
@@ -114,7 +114,7 @@ const ProductSection = () => {
 
         {/* SECOND ROW */}
         <div className="mt-20 flex justify-center">
-          <a href="/products/vnetwall" className="group inline-block text-center">
+          <a href="/http://localhost:5173/products/vnetmox" className="group inline-block text-center">
             <img
               src="/images/wall.png"
               alt="VnetWall"
@@ -128,7 +128,7 @@ const ProductSection = () => {
                          after:w-0 after:bg-blue-600 after:transition-all after:duration-300
                          group-hover:after:w-full"
             >
-              VnetWall
+              Rack Servers
             </h3>
             <p className="text-sm text-blue-600 font-sans">
               Robust & True Security Platform
