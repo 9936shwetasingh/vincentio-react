@@ -1,3 +1,6 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
 const ProductSection = () => {
   return (
     <section className="py-28 bg-white font-sans">
@@ -11,11 +14,11 @@ const ProductSection = () => {
         {/* FIRST ROW */}
         <div className="grid md:grid-cols-4 gap-20 text-center">
 
-          {/* VnetMox */}
-          <a href="/http://localhost:5173/products/vnetwall" className="group inline-block">
+          {/* Flexbox (VnetWall Page) */}
+          <Link to="/products/vnetwall" className="group inline-block">
             <img
               src="/images/Vnetmox.png"
-              alt="VnetMox"
+              alt="Flexbox"
               className="mx-auto mb-6 h-20 transition-all duration-300
                          group-hover:scale-110 group-hover:-translate-y-1"
             />
@@ -31,12 +34,13 @@ const ProductSection = () => {
             <p className="text-sm text-blue-600 font-sans">
               Powerful Virtualization Platform
             </p>
-          </a>
+          </Link>
 
           {/* VnetBackup */}
           <a
             href="https://vincentio.in/products/backup-restore/vnetbackup/"
             target="_blank"
+            rel="noopener noreferrer"
             className="group inline-block"
           >
             <img
@@ -63,6 +67,7 @@ const ProductSection = () => {
           <a
             href="https://vincentio.in/products/storage/vnet-nas/"
             target="_blank"
+            rel="noopener noreferrer"
             className="group inline-block"
           >
             <img
@@ -89,6 +94,7 @@ const ProductSection = () => {
           <a
             href="https://vincentio.in/products/storage/vnetstor/"
             target="_blank"
+            rel="noopener noreferrer"
             className="group inline-block"
           >
             <img
@@ -114,10 +120,10 @@ const ProductSection = () => {
 
         {/* SECOND ROW */}
         <div className="mt-20 flex justify-center">
-          <a href="/http://localhost:5173/products/vnetmox" className="group inline-block text-center">
+          <Link to="/products/vnetmox" className="group inline-block text-center">
             <img
               src="/images/wall.png"
-              alt="VnetWall"
+              alt="Rack Servers"
               className="mx-auto mb-6 h-20 transition-all duration-300
                          group-hover:scale-110 group-hover:-translate-y-1"
             />
@@ -133,7 +139,7 @@ const ProductSection = () => {
             <p className="text-sm text-blue-600 font-sans">
               Robust & True Security Platform
             </p>
-          </a>
+          </Link>
         </div>
 
       </div>
